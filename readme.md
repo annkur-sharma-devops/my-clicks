@@ -11,7 +11,7 @@ A minimal photo gallery web app built with **Next.js**, **TypeScript**, and **Do
 - 🔼 Upload image files (JPG, PNG, GIF, WEBP)
 - 🧼 Auto-delete oldest image when upload limit (10) is reached
 - 🚀 Instant auto-refresh after upload
-- 🔐 Only owner can upload; all photos are publicly viewable
+- 🔐 User can upload; all photos are publicly viewable
 - 🐳 Dockerized setup for consistent deployment
 - 📁 File names are saved as: `photo-YYYYMMDDHHMM-<random>.ext`
 
@@ -30,35 +30,24 @@ A minimal photo gallery web app built with **Next.js**, **TypeScript**, and **Do
 
 ## 🚀 Quick Start (Local)
 
-1. **Clone the repo:**
+**Clone the repo:**
 ```bash
 git clone https://github.com/annkur-sharma-devops/my-clicks.git
 cd my-clicks
 ```
-
-2. **Install dependencies:**
-```bash
-npm install
-```
-
-3. **Run the dev server:**
-```bash
-npm run dev
-```
-4. **Access the application**
-
-### http://localhost:3000
-
 ---
+## 🐳 Docker Usage
 
-##🐳 Docker Usage
-
-1. Build and run using Docker Compose:
+**Build and run using Docker Compose:**
 ```bash
-docker compose up --build
+docker compose build --no-cache
+docker compose up
 ```
-2. Upload volume is mounted from ./public/uploads. This ensures uploads persist across rebuilds.
+---
+## Access the application
 
+- **http://localhost:3000**
+- **http://<VM_IP>:3000**
 ---
 
 ##📦 Project Structure
