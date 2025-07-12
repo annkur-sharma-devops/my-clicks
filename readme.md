@@ -45,9 +45,10 @@ npm install
 ```bash
 npm run dev
 ```
-```bash
-Open http://localhost:3000
-```
+4. **Access the application**
+
+### http://localhost:3000
+
 ---
 
 ##🐳 Docker Usage
