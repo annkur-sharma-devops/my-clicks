@@ -31,37 +31,36 @@ A minimal photo gallery web app built with **Next.js**, **TypeScript**, and **Do
 ## 🚀 Quick Start (Local)
 
 1. **Clone the repo:**
-
-   ```bash
-   git clone https://github.com/annkur-sharma-devops/my-clicks.git
-   cd my-clicks
+```bash
+git clone https://github.com/annkur-sharma-devops/my-clicks.git
+cd my-clicks
 ```
 
 2. **Install dependencies:**
-   ```bash
+```bash
 npm install
 ```
 
 3. **Run the dev server:**
-
-   ```bash
-    npm run dev
-    ```
-
+```bash
+npm run dev
+```
+```bash
 Open http://localhost:3000
+```
+---
 
-
-🐳 Docker Usage
+##🐳 Docker Usage
 
 1. Build and run using Docker Compose:
-   ```bash
+```bash
 docker compose up --build
 ```
-
 2. Upload volume is mounted from ./public/uploads. This ensures uploads persist across rebuilds.
 
+---
 
-###📦 Project Structure
+##📦 Project Structure
 ```ruby
 my-clicks/
 ├── components/
@@ -80,20 +79,24 @@ my-clicks/
 ├── server.js          # Custom image server
 └── README.md
 ```
+---
 
-###📄 Upload API
-Endpoint: /api/upload
-Method: POST
-Payload: FormData with file field
-Response: JSON with upload status
+##📄 Upload API
+- Endpoint: /api/upload
+- Method: POST
+- Payload: FormData with file field
+- Response: JSON with upload status
 
-###💡 Future Enhancements
-🌐 Add user authentication (for upload access)
-🖼️ Add preview thumbnails
-🔍 Add search/filter/tag support
-☁️ Integrate with Azure Blob Storage or S3
-📊 Add GoatCounter / Plausible analytics
+---
 
+##💡 Future Enhancements
+- 🌐 Add user authentication (for upload access)
+- 🖼️ Add preview thumbnails
+- 🔍 Add search/filter/tag support
+- ☁️ Integrate with Azure Blob Storage or S3
+- 📊 Add GoatCounter / Plausible analytics
 
-👨‍💻 Author
+---
+
+##👨‍💻 Author
 Made by Annkur Sharma — feel free to ⭐ the repo or suggest improvements.
