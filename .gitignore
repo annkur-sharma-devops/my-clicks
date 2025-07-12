@@ -32,10 +32,10 @@ Thumbs.db
 .idea/
 *.swp
 
-# Docker
-Dockerfile
-docker-compose.yml
-.dockerignore
+# Docker <Publishing Dockerfile to Github>
+# Dockerfile
+# docker-compose.yml
+# .dockerignore
 
 # Test coverage
 coverage/
