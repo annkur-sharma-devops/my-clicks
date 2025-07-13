@@ -4,7 +4,7 @@ A minimal photo gallery web app built with **Next.js**, **TypeScript**, and **Do
 
 **This repo and application can be used on Docker Hub, Docker Repo, Kubernetes Cluster.**
 
-![My Clicks Screenshot](./public/preview.png) <!-- Optional screenshot -->
+![My Clicks Screenshot](./public/static/Application_Image01.png) <!-- Optional screenshot -->
 ---
 ## ✨ Features
 
@@ -42,12 +42,20 @@ docker build -t image-app1:v1 .
 # Run docker image to a container
 docker run -d -p 8086:3000 image-app1:v1
 ```
+```
+Image created on Docker Desktop.
 ![Docker Desktop Image](./public/static/DockerDesktop_Image01.png)
+```
 
 **Access the application**
 
 - **http://localhost:8086**
 - **http://<VM_IP>:8086**
+
+```
+Image created on Docker Desktop.
+![Application Image](./public/static/Application_Image01.png)
+```
 ---
 ## 🐳 Docker Hub
 
@@ -64,13 +72,24 @@ docker tag image-app1:v1 annkursharmadevops/image-app1:v1
 
 # Push the image to Docker Hub. It will go into the Docker Hub Repo. Now it can be pulled by docker commands.
 docker push annkursharmadevops/image-app1:v1
+
+# Run docker image to a container
+docker run -d -p 8086:3000 image-app1:v1
 ```
-![Docker Desktop Image](./public/static/DockerHub_Image01.png)
+```
+Image created on Docker Hub.
+![Docker Hub Image](./public/static/DockerHub_Image01.png)
+```
 ---
 ## Access the application
 
 - **http://localhost:8086**
 - **http://<VM_IP>:8086**
+
+```
+Image created on Docker Desktop.
+![Application Image](./public/static/Application_Image01.png)
+```
 ---
 ## 📦 Project Structure
 ```ruby
