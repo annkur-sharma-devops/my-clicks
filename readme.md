@@ -2,6 +2,8 @@
 
 A minimal photo gallery web app built with **Next.js**, **TypeScript**, and **Docker**. It allows image uploads (up to 5), auto-deletes the oldest photo when a new one is uploaded, and supports volume-mounting for persistent storage.
 
+**This repo and application can be used on Docker Hub, Docker Repo, Kubernetes Cluster.**
+
 ![My Clicks Screenshot](./public/preview.png) <!-- Optional screenshot -->
 ---
 ## ✨ Features
@@ -30,13 +32,40 @@ git clone https://github.com/annkur-sharma-devops/my-clicks.git
 cd my-clicks
 ```
 ---
-## 🐳 Docker Usage
+## 🐳 Docker Desktop
 
-**Build and run using Docker Compose:**
+**Build and run using Docker Desktop:**
 ```bash
+# Build docker image
 docker build -t image-app1:v1 .
+
+# Run docker image to a container
 docker run -d -p 8086:3000 image-app1:v1
 ```
+![Docker Desktop Image](./public/static/DockerDesktop_Image01.png)
+
+**Access the application**
+
+- **http://localhost:8086**
+- **http://<VM_IP>:8086**
+---
+## 🐳 Docker Hub
+
+**Build and run using Docker Hub Public Repo:**
+```bash
+# Login into docker hub
+docker login
+
+# Build docker image
+docker build -t image-app1:v1 .
+
+# Add docker tag using Docker Hub Username and Image
+docker tag image-app1:v1 annkursharmadevops/image-app1:v1
+
+# Push the image to Docker Hub. It will go into the Docker Hub Repo. Now it can be pulled by docker commands.
+docker push annkursharmadevops/image-app1:v1
+```
+![Docker Desktop Image](./public/static/DockerHub_Image01.png)
 ---
 ## Access the application
 
