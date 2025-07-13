@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demo-app1-acr-image
+  labels:
+    appname: label-app1-acr-image
+spec:
+  containers:
+  - name: demo-app1-acr-image-container
+    image: acr1abc.azurecr.io/image-app1:v1
+    ports:
+    - containerPort: 3000

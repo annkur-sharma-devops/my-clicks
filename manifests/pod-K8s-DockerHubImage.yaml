@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demo-App1-DockerHub-Image
+  labels:
+    appname: label-App1-DockerHub-Image
+spec:
+  containers:
+  - name: demo-App1-DockerHub-Image-Container
+    image: annkursharmadevops/image-app1:v1
+    ports:
+    - containerPort: 3000

@@ -4,7 +4,8 @@ A minimal photo gallery web app built with **Next.js**, **TypeScript**, and **Do
 
 **This repo and application can be used on Docker Hub, Docker Repo, Kubernetes Cluster.**
 
-![My Clicks Screenshot](./public/static/Application_Image01.png) <!-- Optional screenshot -->
+**Application.**
+![My Clicks](./public/static/Application_Image01.png)
 ---
 ## ✨ Features
 
@@ -43,7 +44,7 @@ docker build -t image-app1:v1 .
 docker run -d -p 8086:3000 image-app1:v1
 ```
 
-Image created on Docker Desktop.
+**Image created on Docker Desktop.**
 ![Docker Desktop Image](./public/static/DockerDesktop_Image01.png)
 
 **Access the application**
@@ -51,7 +52,7 @@ Image created on Docker Desktop.
 - **http://localhost:8086**
 - **http://<VM_IP>:8086**
 
-Image created on Docker Desktop.
+**Application.**
 ![Application Image](./public/static/Application_Image01.png)
 
 ---
@@ -74,8 +75,10 @@ docker push annkursharmadevops/image-app1:v1
 # Run docker image to a container
 docker run -d -p 8086:3000 image-app1:v1
 ```
+**Image created on Docker Desktop.**
+![Docker Desktop Image](./public/static/DockerDesktop_Image02.png)
 
-Image created on Docker Hub.
+**Image uploaded on Docker Hub.**
 ![Docker Hub Image](./public/static/DockerHub_Image01.png)
 
 ---
@@ -84,10 +87,61 @@ Image created on Docker Hub.
 - **http://localhost:8086**
 - **http://<VM_IP>:8086**
 
-Image created on Docker Desktop.
+**Application.**
 ![Application Image](./public/static/Application_Image01.png)
 
 ---
+## 🐳➡️☸️ Running Docker Images on Kubernetes from ACR (Azure Container Registry)
+
+### 🚀 Pre-Requisites:
+- Create Kubernetes Cluster
+- Create Azure Container Registry
+- Link Azure Container Registry to Kubernetes Cluster
+- Kubenetes CLI to be installed on the desktop for executing kubectl commands
+
+**Build and run on Kubernetes using ACR Image:**
+```bash
+# Login into docker hub
+docker login
+
+# Login into Azure ACR
+az acr login --name acr1name
+
+# Build docker image
+docker build -t image-app1:v1 .
+
+# Add docker tag using ACR ID and Image
+docker tag image-app1:v1 acr1name.azurecr.io/image-app1:v1
+
+# Push the image to Azure ACR.
+docker push acr1name.azurecr.io/image-app1:v1
+
+# Run kubectl and apply the Pod using YAML file
+# Note: Update the ACR entry to your ACR Name --> image: acr1name.azurecr.io/image-app1:v1
+kubectl apply -f .\manifests\pod-K8s-ACRImage.yaml
+
+# Run kubectl and apply the Service (Loadbalancer) using YAML file
+# Note: Update the ACR entry to your ACR Name --> image: acr1name.azurecr.io/image-app1:v1
+kubectl apply -f .\manifests\service-K8s-ACRImage.yaml
+
+# Run kubectl command to fetch the External IP of the application
+kubectl get svc demo-app1-service
+```
+## Access the application
+
+- **http://<External_IP>:9876**
+- Port 9876 is defined in the Service YAML `(service-K8s-ACRImage.yaml)` to route the traffic through load balancer. We do not need to use port-forward command.
+
+---
+
+**Image created on Docker Desktop.**
+![Docker Desktop Image](./public/static/DockerDesktop_Image03.png)
+
+**Image uploaded on Azure Container Registry (ACR).**
+![ACR Image](./public/static/ACR_Image01.png)
+
+---
+
 ## 📦 Project Structure
 ```ruby
 my-clicks/
