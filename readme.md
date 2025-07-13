@@ -82,6 +82,7 @@ docker run -d -p 8086:3000 image-app1:v1
 ![Docker Hub Image](./public/static/DockerHub_Image01.png)
 
 ---
+
 ## Access the application
 
 - **http://localhost:8086**
@@ -127,6 +128,7 @@ kubectl apply -f .\manifests\service-K8s-ACRImage.yaml
 # Run kubectl command to fetch the External IP of the application
 kubectl get svc demo-app1-service
 ```
+
 ## Access the application
 
 - **http://<External_IP>:9876**
