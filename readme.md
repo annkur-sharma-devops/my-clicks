@@ -52,6 +52,8 @@ docker run -d -p 8086:3000 image-app1:v1
 - **http://localhost:8086**
 - **http://<VM_IP>:8086**
 
+---
+
 **Application.**
 ![Application Image](./public/static/Application_Image01.png)
 
@@ -87,6 +89,8 @@ docker run -d -p 8086:3000 image-app1:v1
 
 - **http://localhost:8086**
 - **http://<VM_IP>:8086**
+
+---
 
 **Application.**
 ![Application Image](./public/static/Application_Image01.png)
@@ -143,7 +147,6 @@ kubectl get svc demo-app1-service
 ![ACR Image](./public/static/ACR_Image01.png)
 
 ---
-
 ## 📦 Project Structure
 ```ruby
 my-clicks/
@@ -180,7 +183,6 @@ my-clicks/
 - 📊 Add GoatCounter / Plausible analytics
 
 ---
-
 ## 👨‍💻 Author
 
 Made by Annkur Sharma — feel free to ⭐ the repo or suggest improvements.
