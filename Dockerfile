@@ -34,5 +34,10 @@ COPY server.js ./
 # Create empty uploads folder (mounted at runtime)
 RUN mkdir -p public/uploads
 
+# Expose the port your app runs on
 EXPOSE 3000
+
+# Bind to 0.0.0.0 explicitly to allow access from outside the container
+ENV HOST=0.0.0.0
+
 CMD ["node", "server.js"]

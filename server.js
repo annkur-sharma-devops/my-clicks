@@ -24,7 +24,9 @@ app.prepare().then(() => {
   server.all('*', (req, res) => handle(req, res));
 
   // ✅ Start server
-  server.listen(port, () => {
-    console.log(`> Ready on http://localhost:${port}`);
-  });
+  const host = process.env.HOST || '0.0.0.0';
+
+  server.listen(port, host, () => {
+  console.log(`> Ready on http://${host}:${port}`);
+});
 });

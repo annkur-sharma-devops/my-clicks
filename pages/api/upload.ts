@@ -51,7 +51,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // Move uploaded file
     fs.renameSync(file.filepath, newPath);
 
-    // Clean up old files (keep only 10)
+    // Clean up old files (keep only 5)
     let allFiles = fs.readdirSync(uploadDir)
       .map(name => {
         const fullPath = path.join(uploadDir, name);
@@ -66,8 +66,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     allFiles.sort((a, b) => a.time - b.time);
 
-    if (allFiles.length > 10) {
-      const toDelete = allFiles.slice(0, allFiles.length - 10);
+    if (allFiles.length > 5) {
+      const toDelete = allFiles.slice(0, allFiles.length - 5);
       for (const f of toDelete) {
         try {
           fs.unlinkSync(path.join(uploadDir, f.name));
