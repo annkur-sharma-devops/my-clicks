@@ -42,20 +42,18 @@ docker build -t image-app1:v1 .
 # Run docker image to a container
 docker run -d -p 8086:3000 image-app1:v1
 ```
-```
+
 Image created on Docker Desktop.
 ![Docker Desktop Image](./public/static/DockerDesktop_Image01.png)
-```
 
 **Access the application**
 
 - **http://localhost:8086**
 - **http://<VM_IP>:8086**
 
-```
 Image created on Docker Desktop.
 ![Application Image](./public/static/Application_Image01.png)
-```
+
 ---
 ## 🐳 Docker Hub
 
@@ -76,20 +74,19 @@ docker push annkursharmadevops/image-app1:v1
 # Run docker image to a container
 docker run -d -p 8086:3000 image-app1:v1
 ```
-```
+
 Image created on Docker Hub.
 ![Docker Hub Image](./public/static/DockerHub_Image01.png)
-```
+
 ---
 ## Access the application
 
 - **http://localhost:8086**
 - **http://<VM_IP>:8086**
 
-```
 Image created on Docker Desktop.
 ![Application Image](./public/static/Application_Image01.png)
-```
+
 ---
 ## 📦 Project Structure
 ```ruby
