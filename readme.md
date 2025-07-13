@@ -1,22 +1,18 @@
 # 📸 My Clicks
 
-A minimal photo gallery web app built with **Next.js**, **TypeScript**, and **Docker**. It allows image uploads (up to 10), auto-deletes the oldest photo when a new one is uploaded, and supports volume-mounting for persistent storage.
+A minimal photo gallery web app built with **Next.js**, **TypeScript**, and **Docker**. It allows image uploads (up to 5), auto-deletes the oldest photo when a new one is uploaded, and supports volume-mounting for persistent storage.
 
 ![My Clicks Screenshot](./public/preview.png) <!-- Optional screenshot -->
-
 ---
-
 ## ✨ Features
 
 - 🔼 Upload image files (JPG, PNG, GIF, WEBP)
-- 🧼 Auto-delete oldest image when upload limit (10) is reached
+- 🧼 Auto-delete oldest image when upload limit (5) is reached
 - 🚀 Instant auto-refresh after upload
 - 🔐 User can upload; all photos are publicly viewable
 - 🐳 Dockerized setup for consistent deployment
 - 📁 File names are saved as: `photo-YYYYMMDDHHMM-<random>.ext`
-
 ---
-
 ## 🛠️ Tech Stack
 
 - **Next.js** (App Directory + SSR)
@@ -25,9 +21,7 @@ A minimal photo gallery web app built with **Next.js**, **TypeScript**, and **Do
 - **Formidable** (file parsing)
 - **Docker + Docker Compose**
 - **Custom Express server for image serving**
-
 ---
-
 ## 🚀 Quick Start (Local)
 
 **Clone the repo:**
@@ -40,17 +34,16 @@ cd my-clicks
 
 **Build and run using Docker Compose:**
 ```bash
-docker compose build --no-cache
-docker compose up
+docker build -t image-app1:v1 .
+docker run -d -p 8086:3000 image-app1:v1
 ```
 ---
 ## Access the application
 
-- **http://localhost:3000**
-- **http://<VM_IP>:3000**
+- **http://localhost:8086**
+- **http://<VM_IP>:8086**
 ---
-
-##📦 Project Structure
+## 📦 Project Structure
 ```ruby
 my-clicks/
 ├── components/
@@ -70,16 +63,15 @@ my-clicks/
 └── README.md
 ```
 ---
+## 📄 Upload API
 
-##📄 Upload API
 - Endpoint: /api/upload
 - Method: POST
 - Payload: FormData with file field
 - Response: JSON with upload status
-
 ---
+## 💡 Future Enhancements
 
-##💡 Future Enhancements
 - 🌐 Add user authentication (for upload access)
 - 🖼️ Add preview thumbnails
 - 🔍 Add search/filter/tag support
@@ -88,5 +80,6 @@ my-clicks/
 
 ---
 
-##👨‍💻 Author
+## 👨‍💻 Author
+
 Made by Annkur Sharma — feel free to ⭐ the repo or suggest improvements.
